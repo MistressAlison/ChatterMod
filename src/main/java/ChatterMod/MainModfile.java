@@ -7,15 +7,13 @@ import basemod.ModPanel;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,47 +31,12 @@ public class MainModfile implements
         return modID + ":" + idText;
     }
 
-    public static final Color SAGELY_MALIBU_COLOR = CardHelper.getColor(118, 176, 247); //76B0F7
-
-    public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulder2.png";
-    public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulder.png";
-    public static final String CORPSE = modID + "Resources/images/char/mainChar/corpse.png";
-    public static final String ATTACK_S_ART = modID + "Resources/images/512/attack_tree2.png";
-    public static final String SKILL_S_ART = modID + "Resources/images/512/skill_tree2.png";
-    public static final String POWER_S_ART = modID + "Resources/images/512/power_tree2.png";
-    public static final String ATTACK_L_ART = modID + "Resources/images/1024/attack_tree2.png";
-    public static final String SKILL_L_ART = modID + "Resources/images/1024/skill_tree2.png";
-    public static final String POWER_L_ART = modID + "Resources/images/1024/power_tree2.png";
-    private static final String CARD_ENERGY_S = modID + "Resources/images/512/energy.png";
-    private static final String TEXT_ENERGY = modID + "Resources/images/512/energy_text.png";
-    private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy_large.png";
-    private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
-    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
-
     public static final String BADGE_IMAGE = modID + "Resources/images/Badge.png";
 
     public static UIStrings uiStrings;
     public static String[] TEXT;
     public static String[] EXTRA_TEXT;
-    private static final String AUTHOR = "Mistress Alison";
-
-    public static final String ENABLE_CARD_BATTLE_TALK_SETTING = "enableCardBattleTalk";
-    public static boolean enableCardBattleTalkEffect = false;
-
-    public static final String CARD_BATTLE_TALK_PROBABILITY_SETTING = "cardTalkProbability";
-    public static int cardTalkProbability = 10; //Out of 100
-
-    public static final String ENABLE_DAMAGED_BATTLE_TALK_SETTING = "enableDamagedBattleTalk";
-    public static boolean enableDamagedBattleTalkEffect = false;
-
-    public static final String DAMAGED_BATTLE_TALK_PROBABILITY_SETTING = "damagedTalkProbability";
-    public static int damagedTalkProbability = 20; //Out of 100
-
-    public static final String ENABLE_PRE_BATTLE_TALK_SETTING = "enablePreBattleTalk";
-    public static boolean enablePreBattleTalkEffect = false;
-
-    public static final String PRE_BATTLE_TALK_PROBABILITY_SETTING = "preTalkProbability";
-    public static int preTalkProbability = 50; //Out of 100
+    private static final String AUTHOR = "Mistress Autumn";
 
     public MainModfile() {
         BaseMod.subscribe(this);
@@ -152,13 +115,5 @@ public class MainModfile implements
 
         //Add Config stuff
 
-    }
-
-    public static Color getRainbowColor() {
-        return new Color(
-                (MathUtils.cosDeg((float)(System.currentTimeMillis() / 10L % 360L)) + 1.25F) / 2.3F,
-                (MathUtils.cosDeg((float)((System.currentTimeMillis() + 1000L) / 10L % 360L)) + 1.25F) / 2.3F,
-                (MathUtils.cosDeg((float)((System.currentTimeMillis() + 2000L) / 10L % 360L)) + 1.25F) / 2.3F,
-                1.0f);
     }
 }

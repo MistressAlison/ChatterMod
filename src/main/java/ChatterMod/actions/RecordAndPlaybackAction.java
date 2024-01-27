@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 
 public class RecordAndPlaybackAction extends AbstractGameAction {
     private TargetDataLine input;
-    private final File audioFile = new File("WorldlySage_Chatter.wav");
+    private final File audioFile = new File("ChatterMod_Chatter.wav");
     private final Consumer<Float> callback;
     public RecordAndPlaybackAction(Consumer<Float> callback) {
         this.duration = this.startDuration = Settings.ACTION_DUR_XLONG;
